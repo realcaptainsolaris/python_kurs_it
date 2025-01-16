@@ -13,9 +13,6 @@ genutzt werden und von den Teilnehmern bearbeitet werden können.
 - File Handling in Python
 - Jupyter Notebooks für die Einführung in Numpy, Pandas und Matplotlib
 
-## Nutzung
-
-    git clone https://github.com/realcaptainsolaris/python_intro_blank
 
 ## Installationshinweise
 Für die Nutzung der Jupyter Notebooks müssen folgende Pakete installiert werden: 
