@@ -1,0 +1,4 @@
+Python ist eine vielseitige Programmiersprache.
+Sie wird für Webentwicklung, Datenanalyse und KI verwendet.
+Python ist einfach zu lernen.
+
