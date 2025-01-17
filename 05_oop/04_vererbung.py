@@ -13,17 +13,58 @@ Programmierung (OOP) in Python.
 
 class Animal:
     """Basisklasse, die allgemeine Eigenschaften von Tieren definiert."""
+    def __init__(self, name, age):
+        self.name = name 
+        self.age = age
+        self.is_alive = True
 
-    pass
+    def say(self):
+        print(f"{self.name} says nothing, aber ist am Leben: {self.is_alive}")
+
 
 
 # Kindklasse, die von Animal erbt
+class Duck(Animal):
+
+    def __init__(self, name, age, federgewicht):
+        super().__init__(name, age)
+        self.federgewicht = federgewicht
+
+    # def say(self):
+    #     print(f"{self.name} says Qauck Quack")
 
 
 # Kindklasse, die von Animal erbt
+class Dog(Animal):
+    pass 
 
 
-# Beispielaufrufe der Klassen
+donald = Duck("Donald", 120, "weich")
+donald.say()
+
+
+##################################
+class Rectangle:
+    def __init__(self, a, b):
+        self.a = a 
+        self.b = b 
+
+    def area(self):
+        return self.a * self.b
+
+
+class Square(Rectangle):
+    def __init__(self, a):
+        super().__init__(a, a)
+
+
+r = Rectangle(3, 5)
+print("Fläche von r:", r.area())
+
+s = Square(3)
+s.area()
+
+
 
 # Aufgabe:
 # Füge eine weitere Kindklasse hinzu, z. B. Bird, und implementiere eine
@@ -50,7 +91,7 @@ class Vehicle:
 # Beispielaufruf der Klasse Car
 
 # Beispiel 3: Typprüfung mit `isinstance` und `issubclass`
-print(isinstance(dog, Animal))  # True
-print(isinstance(dog, Dog))  # True
-print(issubclass(Dog, Animal))  # True
-print(issubclass(Cat, Dog))  # False
+# print(isinstance(dog, Animal))  # True
+# print(isinstance(dog, Dog))  # True
+# print(issubclass(Dog, Animal))  # True
+# print(issubclass(Cat, Dog))  # False

@@ -119,3 +119,27 @@ values = [2, 2.2, 4, 2.3, 1.1]
 interval = (1, 5.3)
 result = check_values(values, interval)
 print(result)
+
+
+def summe(a, b):
+    return a + b 
+
+
+number_tuple = (10, 20)
+
+# via Index (klassisch)
+summe(number_tuple[0], number_tuple[1])
+
+# via Entpacken
+a, b = number_tuple
+summe(a, b)
+
+# via Entpacken bei Aufruf (on the fly zwei Argumente)
+summe(*number_tuple)
+
+
+# Rekursion
+# def preis():
+#     preis()
+
+# preis()

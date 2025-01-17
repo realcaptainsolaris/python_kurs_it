@@ -24,17 +24,19 @@ class Produkt:
     def __init__(self, name, preis, verfuegbarkeit):
         # Hier müssen die Instanzvariablen initialisiert werden
         self.name = name
-        self.preis = preis
+        self.preis = preis  # self.preis(209)
         self.verfuegbarkeit = verfuegbarkeit
 
+    @property 
+    def preis(self):
+        return self._preis
 
-    # Getter-Methode für preis
+    @preis.setter
+    def preis(self, value):
+        self._preis = value
 
-    # Getter-Methode für verfuegbarkeit
-
-    # Setter-Methode für preis
-
-    # Setter-Methode für verfuegbarkeit
+    def __str__(self) -> str:
+        return f"{self.name} kostet {self.preis} und ist {self.verfuegbarkeit}"
 
 
 if __name__ == "__main__":
@@ -48,6 +50,9 @@ if __name__ == "__main__":
 
     for product in products:
         try:
-            Produkt(...)
+            obj = Produkt(*product)
+            print(obj)
+            # print(obj.preis)  # Default Get-Zugriff
+            # obj.preis = -23   # Default set-Zugriff
         except ValueError as e:
             print(f"es ist ein Fehler aufgetreten: {e}")

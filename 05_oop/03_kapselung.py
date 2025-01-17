@@ -17,7 +17,6 @@ class BankAccount:
     def __init__(self, account_holder, balance):
         self.account_holder = account_holder
         self.kontostand = balance
-        # self.__balance = balance  # Privates Attribut
     
     @property
     def kontostand(self):
@@ -41,7 +40,7 @@ class BankAccount:
     
 
 # Beispielaufrufe der Klasse BankAccount
-account = BankAccount("Fischer", "200")
+account = BankAccount("Fischer", 200)
 account.kontostand = 332 # setter wird benötigt, um Eingabe/Setzen zu Validieren
 print(account.kontostand)  # get
 

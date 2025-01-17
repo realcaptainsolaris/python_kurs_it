@@ -8,26 +8,6 @@ Programmierung (OOP) in Python.
 - Polymorphie wird oft in Kombination mit Vererbung verwendet.
 """
 
-# Beispiel 1: Polymorphie mit Vererbung
-
-
-class Animal:
-    """Basisklasse für Tiere."""
-
-    def speak(self):
-        """Allgemeine Methode, die von Kindklassen überschrieben wird."""
-        return "Das Tier macht ein Geräusch."
-
-
-# Funktion, die Polymorphie demonstriert
-
-
-# Beispielaufrufe
-
-
-# Beispiel 2: Polymorphie mit gemeinsamen Schnittstellen
-
-
 class Shape:
     """Basisklasse für verschiedene Formen."""
 
@@ -38,15 +18,35 @@ class Shape:
         )
 
 
-# Liste von Formen
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius 
+
+    def area(self):
+        from math import pi
+        return pi * self.radius**2
+
+
+class Rectangle(Shape):
+    def __init__(self, a, b):
+        self.a = a 
+        self.b = b 
+
+    def area(self):
+        return self.a * self.b
 
 
 def print_areas(shapes):
     """Akzeptiert eine Liste von Shape-Objekten und gibt ihre Flächen aus."""
+    for shape in shapes:
+        print(shape.area())
 
 
 # Beispielaufrufe
-shapes = []
+shapes = [
+    Circle(3), Circle(92), Rectangle(2, 1), Circle(2), Rectangle(12, 1)
+]
+print_areas(shapes)
 
 
 # Beispiel 3: Polymorphie mit benutzerdefinierten Funktionen
